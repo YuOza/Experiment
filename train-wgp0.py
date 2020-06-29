@@ -212,5 +212,5 @@ def main(nz, real_z, n_ep, m_name, dataset_name, value, space):
     return
 
 if __name__ == '__main__':
-    main(nz=200, real_z=100, n_ep=400, m_name='WGP_7', dataset_name='bedroom', value=10, space=800)
+    main(nz=200, real_z=100, n_ep=400, m_name='WGPxx_xx', dataset_name='bedroom', value=10, space=800)
 # dataset name = Celeb, tower, bedroom
