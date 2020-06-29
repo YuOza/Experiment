@@ -243,5 +243,5 @@ def train_one_time(nz, real_z, n_ep, m_name, dataset_name, value, space):
     return
 
 if __name__ == '__main__':
-    train_one_time(nz=200, real_z=100, n_ep=400, m_name='WGP1_13', dataset_name='Celeb', value=10, space=20)
+    train_one_time(nz=200, real_z=100, n_ep=400, m_name='WGPx_xx', dataset_name='Celeb', value=10, space=20)
 # dataset name = Celeb, tower, bedroom
