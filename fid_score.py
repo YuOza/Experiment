@@ -69,7 +69,7 @@ def imread(filename):
     """
     Loads an image file into a (height, width, 3) uint8 ndarray.
     """
-    return np.asarray(Image.open(filename), dtype=np.uint8)[..., :3]
+    return np.asarray(Image.open(filename).resize((299,299)), dtype=np.uint8)[..., :3]
 
 
 def get_activations(files, model, batch_size=50, dims=2048,
@@ -113,7 +113,7 @@ def get_activations(files, model, batch_size=50, dims=2048,
                            for f in files[start:end]])
 
         # Reshape to (n_images, 3, height, width)
-        images = images.transpose((0, 3, 1, 2))
+        images = images.transpose(0, 3, 1, 2)
         images /= 255
 
         batch = torch.from_numpy(images).type(torch.FloatTensor)
