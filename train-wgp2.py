@@ -142,7 +142,7 @@ def train_one_time(nz, real_z, n_ep, m_name, dataset_name, value, space):
     highest_fid = 1000
     now_fid = 1000
     
-    Gpath = "./learn/forISimages"
+    Gpath = "./learn/forISimages/IS"
     Tpath = "./learn/forFIDTrue/"+dataset_name
     fid_path = [Tpath, Gpath]
     SavePath = "./learn/forISimages/IS"
