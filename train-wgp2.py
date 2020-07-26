@@ -228,7 +228,7 @@ def train_one_time(nz, real_z, n_ep, m_name, dataset_name, value, space):
         log.write(str(i) + '\n')
     print('FID print')
     log.write('FID \n')
-    for i in islist:
+    for i in fid_list:
         log.write(str(i) + '\n')
     print('Final z dimension = '+ str(model.real_z))
     log.write('Final z dimension = '+ str(model.real_z) + '\n')
