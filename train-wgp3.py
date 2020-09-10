@@ -77,7 +77,7 @@ def train_one_time(nz, real_z, n_ep, m_name, dataset_name, value, space):
             transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))]))
     elif dataset_name == 'tower':
         dsn = "tw"
-        fid_name = "./def_fid/tower.txt"
+        fid_name = "./learn/def_fid/tower.txt"
         opts.img_size = 64
         dataset = ImageDataset('./tower', transform=transforms.Compose([
             transforms.Resize((opts.img_size,opts.img_size)),
@@ -86,16 +86,16 @@ def train_one_time(nz, real_z, n_ep, m_name, dataset_name, value, space):
         ]))
     elif dataset_name == 'bedroom':
         dsn = "bd"
-        fid_name = "./def_fid/bedroom.txt"
+        fid_name = "./learn/def_fid/bedroom.txt"
         opts.img_size = 64
         dataset = ImageDataset('./bedroom', transform=transforms.Compose([
             transforms.Resize((opts.img_size,opts.img_size)),
             transforms.ToTensor(),
             transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
         ]))
-    elif dataset_name == 'Celeb':
+    elif dataset_name == 'celeb':
         dsn = "ce"
-        fid_name = "./def_fid/celeb.txt"
+        fid_name = "./learn/def_fid/celeb.txt"
         opts.img_size = 64
         dataset = ImageDataset('./celeb', transform=transforms.Compose([
             transforms.Resize((opts.img_size,opts.img_size)),
@@ -147,7 +147,7 @@ def train_one_time(nz, real_z, n_ep, m_name, dataset_name, value, space):
     imgs = []
     names = []
     fid_list = []
-    fid_file = f.open(fid_name)
+    fid_file = open(fid_name)
     for ep in range(ep0, opts.n_ep):
         for it, (images, label) in enumerate(train_loader):
             if images.size(0) != opts.batch_size:
